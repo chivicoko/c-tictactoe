@@ -34,18 +34,17 @@ int main()
 
             playerMove();
             winner = checkWinner();
-            if (winner != ' ' || checkFreeSpaces == 0)
+            if (winner != ' ' || checkFreeSpaces() == 0)
             {
                 break;
             }
             
             computerMove();
             winner = checkWinner();
-            if (winner != ' ' || checkFreeSpaces == 0)
+            if (winner != ' ' || checkFreeSpaces() == 0)
             {
                 break;
-            }
-            
+            }   
         }
 
         printBoard();
@@ -56,7 +55,7 @@ int main()
         scanf("%c", &response);
         response = toupper(response);
     } while (response == 'Y');
-    
+   
     printf("Thanks for playing!");
     
     return 0;
@@ -127,7 +126,6 @@ void playerMove()
             break;
         }
     } while (board[x][y] != ' ');
-    
 };
 
 void computerMove()
